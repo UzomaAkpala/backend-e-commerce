@@ -10,6 +10,11 @@ app.get("/", (req, res) => {
   res.json({ message: "Api running" });
 });
 
+// mongodb connection
+
+const connectDb = require("./config/db");
+connectDb();
+
 app.use("/api", apiRoutes);
 
 app.listen(port, () => {
